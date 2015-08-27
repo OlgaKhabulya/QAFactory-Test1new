@@ -23,9 +23,10 @@ public class Lesson5 {
         }
         return l2;
     }
+
     public static String LineAndDigit2(int r, String l) {
         String l2 = "";
-        while(r-- > 0) {
+        while (r-- > 0) {
             l2 += l + "\n";
         }
         return l2;
@@ -33,7 +34,7 @@ public class Lesson5 {
 
     public static String LineAndDigit3(int r, String l) {
         StringBuilder l2 = new StringBuilder();
-        while(r-- > 0) {
+        while (r-- > 0) {
             l2.append(l).append("\n");
         }
         return l2.toString();
@@ -47,6 +48,21 @@ public class Lesson5 {
             }
         }
         return true;
+    }
+
+    //    4.
+    public static boolean EqualityOfArrays(int[] Ar3, int[] Ar4) {
+        if (Ar3 == Ar4) {
+            return true; // checking length of arrays
+        }
+
+        for (int w = 0; w < Ar3.length; w++) {
+            if (Ar3[w] != Ar4[w]) {
+                return false;
+            }
+        }
+        return true; // checking equality of arrays. If Array3 matches Array4
+
     }
 
 
@@ -73,15 +89,13 @@ public class Lesson5 {
         boolean ResultOfMatching2 = MatchingInArrays(Array3, Array4);
         System.out.println(ResultOfMatching2);
 
-        // 4. int[] a = {1, 10, 20};
-//    a.length // 3
-//    функция принимает 2 массива любой длинньі, и вьідает в результате одинаковьіе ли все их значения.
 
-        int [] Array5 = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-        int [] Array6 = {1, 20, 30, 4, 50, 60, 7, 80, 90};
-        String ResultOfEquality = EqualityOfArrays (Array5,Array6);
+// 4.  функция принимает 2 массива любой длинньі, и вьідает в результате одинаковьіе ли все их значения.
 
-
+        int[] Array5 = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        int[] Array6 = {1, 20, 30, 4, 50, 60, 7, 80, 90};
+        boolean ResultOfEquality = EqualityOfArrays(Array5, Array6);
+        System.out.println(ResultOfEquality);
 
 
         int i = 1000;
@@ -106,8 +120,42 @@ public class Lesson5 {
         y = TargetsInArray(notstrings3, target3);
         System.out.println(y);
 
+        // diff21
+        int n1 = 19;
+        int y9 = diff21(n1);
+        System.out.println(y9);
+
+        //talking parrot
+        boolean parrot = false;
+        int hours = 8;
+        boolean y8 = parrotTrouble(parrot, hours);
+        System.out.println(y8);
+
+    }
+// talking parrot
+
+    public static boolean parrotTrouble(boolean talking, int hour) {
+        if (hour < 7 && talking == true || hour > 20 && talking == true)
+
+        {
+            return true;
+        }
+        return false;
     }
 
+
+    // diff 21
+    public static int diff21(int n) {
+        int nDiff = Math.abs(n - 21);
+
+        if (n > 21) {
+            nDiff = nDiff * 2;
+        } else if (n < 21) {
+            return nDiff;
+        }
+
+        return nDiff;
+    }
 
     public static int TargetsInArray(int[] ns, int t) {
         int count = 0;
