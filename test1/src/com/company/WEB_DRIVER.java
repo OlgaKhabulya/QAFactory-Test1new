@@ -23,7 +23,7 @@ public class WEB_DRIVER {
 
         d123.get("http://google.com"); // starting
 
-        System.out.println(d123.getTitle());
+        System.out.println(d123.getTitle()); // the same Assert.assertEquals("Google", d123.getTitle()) <- this is used everywhere where sout used to.
         WebElement j = d123.findElementByName("q"); // find input field
         j.sendKeys("котята"); // typing in input fild
         j.sendKeys(Keys.ENTER); // press Enter
